@@ -1,24 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class CalcUtils {
 
-    public static int fromRomeToArab(String numb) {
-        String[] arab = new String[100];
-        for (int i = 0; i < arab.length; i++) {
-            arab[i] = String.valueOf(i+1);
-        }
-        String[] rome = new String[]{"I","II","III","IV","V","VI","VII","VIII","IX","X"};
+    public static int convertRomeToArab(String rome) {
+        int[] arabs = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] romes = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
+        Map<String, Integer> romeArabPairs = new HashMap<>();
 
-        int position = 0;
-        for (int i = 0; i < rome.length; i++) {
-            if (numb.equals(rome[i])) {
-                position = i;
-                break;
-            }
+        for (int i = 0; i < 10; i++) {
+            romeArabPairs.put(romes[i], arabs[i]);
         }
 
-        return Integer.parseInt(arab[position]);
+        return romeArabPairs.get(rome);
     }
 
-    public static String getInteger(int input) {
+    public static String convertArabToRome(int input) {
         String s = "";
 
         while (input >= 100) {
@@ -61,14 +58,13 @@ public class CalcUtils {
     }
 
     public static boolean isArabic (String numb1, String numb2) {
-        int number1 = 0;
-        int number2 = 0;
         try{
-            number1 = Integer.parseInt(numb1);
-            number2 = Integer.parseInt(numb2);
+            Integer.parseInt(numb1);
+            Integer.parseInt(numb2);
         } catch (NumberFormatException e) {
             return false;
         }
+
         return true;
     }
 }

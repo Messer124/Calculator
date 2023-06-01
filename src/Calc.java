@@ -18,8 +18,8 @@ public class Calc {
                 number1 = Integer.parseInt(parts[0]);
                 number2 = Integer.parseInt(parts[2]);
             } else {
-                number1 = CalcUtils.fromRomeToArab(parts[0]);
-                number2 = CalcUtils.fromRomeToArab(parts[2]);
+                number1 = CalcUtils.convertRomeToArab(parts[0]);
+                number2 = CalcUtils.convertRomeToArab(parts[2]);
                 isRome = true;
             }
 
@@ -31,7 +31,7 @@ public class Calc {
             }
 
             if (isRome) {
-                System.out.println(CalcUtils.getInteger(result));
+                System.out.println(CalcUtils.convertArabToRome(result));
             } else System.out.println(result);
 
         } else
