@@ -7,7 +7,7 @@ public class Calc {
         int number2;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String input = reader.readLine();
-        String parts[] = input.split(" ");
+        String[] parts = input.split(" ");
         String regex = "(([1][0]|[1-9]) (\\+|\\-|\\*|\\/) ([1][0]|[1-9]))|((I?X|I{1,3}|I?VI{0,3}) (\\+|\\-|\\*|\\/) (I?X|I{1,3}|I?VI{0,3}))";
         boolean correctString = input.matches(regex);
         boolean isRome = false;
