@@ -4,12 +4,12 @@ import java.util.Map;
 public class CalcUtils {
 
     public static int convertRomeToArab(String rome) {
-        int[] arabs = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        String[] romes = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
+        int[] arabicValues = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        String[] romanSymbols = {"I","II","III","IV","V","VI","VII","VIII","IX","X"};
         Map<String, Integer> romeArabPairs = new HashMap<>();
 
         for (int i = 0; i < 10; i++) {
-            romeArabPairs.put(romes[i], arabs[i]);
+            romeArabPairs.put(romanSymbols[i], arabicValues[i]);
         }
 
         return romeArabPairs.get(rome);
