@@ -31,13 +31,6 @@ public class CalcUtils {
     }
 
     public static boolean isArabic (String numb1, String numb2) {
-        try{
-            Integer.parseInt(numb1);
-            Integer.parseInt(numb2);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-
-        return true;
+        return numb1.matches("\\d+") && numb2.matches("\\d+");
     }
 }

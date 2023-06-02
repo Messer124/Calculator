@@ -37,6 +37,6 @@ public class Calc {
                 System.out.println(result);
 
         } else
-            throw new Exception();
+            throw new Exception("Incorrect input");
     }
 }
