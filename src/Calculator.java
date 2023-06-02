@@ -13,12 +13,12 @@ public class Calculator {
         int result = 0;
 
         if(correctString){
-            if (Calculator.isArabic(parts[0], parts[2])) {
+            if (isArabic(parts[0], parts[2])) {
                 number1 = Integer.parseInt(parts[0]);
                 number2 = Integer.parseInt(parts[2]);
             } else {
-                number1 = Calculator.convertRomeToArab(parts[0]);
-                number2 = Calculator.convertRomeToArab(parts[2]);
+                number1 = convertRomeToArab(parts[0]);
+                number2 = convertRomeToArab(parts[2]);
                 isRome = true;
             }
 
@@ -30,7 +30,7 @@ public class Calculator {
             }
 
             if (isRome) {
-                System.out.println(Calculator.convertArabToRome(result));
+                System.out.println(convertArabToRome(result));
             } else
                 System.out.println(result);
 
