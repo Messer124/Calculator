@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Calc {
+
     public static void main(String[] args) throws Exception {
         int number1;
         int number2;
@@ -32,7 +33,8 @@ public class Calc {
 
             if (isRome) {
                 System.out.println(CalcUtils.convertArabToRome(result));
-            } else System.out.println(result);
+            } else
+                System.out.println(result);
 
         } else
             throw new Exception();

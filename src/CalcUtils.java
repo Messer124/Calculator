@@ -16,45 +16,18 @@ public class CalcUtils {
     }
 
     public static String convertArabToRome(int input) {
-        String s = "";
+        int[] arabicValues = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] romanSymbols = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        StringBuilder result = new StringBuilder();
 
-        while (input >= 100) {
-            s += "C";
-            input -= 100;
+        for (int i = 0; i < arabicValues.length; i++) {
+            while (input >= arabicValues[i]) {
+                result.append(romanSymbols[i]);
+                input -= arabicValues[i];
+            }
         }
-        while (input >= 90) {
-            s += "XC";
-            input -= 90;
-        }
-        while (input >= 50) {
-            s += "L";
-            input -= 50;
-        }
-        while (input >= 40) {
-            s += "XL";
-            input -= 40;
-        }
-        while (input >= 10) {
-            s += "X";
-            input -= 10;
-        }
-        while (input >= 9) {
-            s += "IX";
-            input -= 9;
-        }
-        while (input >= 5) {
-            s += "V";
-            input -= 5;
-        }
-        while (input >= 4) {
-            s += "IV";
-            input -= 4;
-        }
-        while (input >= 1) {
-            s += "I";
-            input -= 1;
-        }
-        return s;
+
+        return result.toString();
     }
 
     public static boolean isArabic (String numb1, String numb2) {
